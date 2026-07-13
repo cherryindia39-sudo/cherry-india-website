@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Products — PET Preforms & Bottles | Cherry India</title><meta name="description" content="Browse Cherry India's PET preforms and PET bottles. 70+ PET preforms across 16 neck sizes, plus bottles across capacities for water, oil, pharma and cosmetics."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Products — PET Preforms & Bottles | Cherry India</title><meta name="description" content="Browse Cherry India's PET preforms and PET bottles. 70+ PET preforms across 16 neck sizes, plus bottles across capacities for water, oil, pharma and cosmetics."/><style>
   :root{
     /* ---- Cherry India design tokens ---- */
     --ink:#0C2C4A;          /* primary deep ink-navy */
@@ -14,9 +14,9 @@
     --muted:#5C6879;        /* secondary text         */
     --steel:#8A97A8;        /* faint labels           */
 
-    --f-display:'Sora',sans-serif;
-    --f-body:'Inter',sans-serif;
-    --f-mono:'IBM Plex Mono',monospace;
+    --f-display:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    --f-body:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    --f-mono:'Helvetica Neue',Helvetica,Arial,sans-serif;
 
     --wrap:1180px;
     --r:14px;
@@ -83,8 +83,8 @@
 
   /* ---------- hero ---------- */
   .hero{position:relative;overflow:hidden;background:
-     radial-gradient(900px 500px at 88% -10%,rgba(29,111,184,.10),transparent 60%),
-     linear-gradient(180deg,#fff 0%,var(--mist) 100%);}
+     radial-gradient(900px 500px at 88% -10%,rgba(29,111,184,.05),transparent 60%),
+     #fff;}
   .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;padding:78px 0 66px}
   .hero h1{font-size:clamp(34px,4.6vw,58px);font-weight:700;margin:22px 0 20px}
   .hero h1 .hl{color:var(--cherry)}
@@ -122,7 +122,7 @@
   .trust .t-item span{font-size:14.5px;color:#D7E3F0;font-weight:500}
 
   /* product family cards */
-  .families{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .families{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:24px}
   .fam{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;transition:transform .2s,box-shadow .25s;}
   .fam:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
   .fam .top{height:190px;background:linear-gradient(150deg,var(--ink) 0%,var(--ink-2) 100%);position:relative;display:flex;align-items:center;justify-content:center}
@@ -137,7 +137,7 @@
   .fam:hover .go svg{transform:translateX(4px)}
 
   /* neck-size chips */
-  .chips-wrap{background:var(--mist);border:1px solid var(--line);border-radius:var(--r);padding:32px}
+  .chips-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:32px}
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
   .chip{font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 14px;transition:.18s}
   .chip:hover{border-color:var(--cherry);color:var(--cherry)}
@@ -153,7 +153,7 @@
   .cap p{color:var(--muted);font-size:14.5px}
 
   /* about split */
-  .about{background:var(--mist)}
+  .about{background:#fff;border-top:1px solid var(--line)}
   .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:48px;align-items:center}
   .about .panel{background:var(--ink);border-radius:20px;padding:40px;color:#fff;position:relative;overflow:hidden}
   .about .panel .grid-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.10) 1px,transparent 1px);background-size:22px 22px;opacity:.5}
@@ -291,7 +291,7 @@
 .field{margin-bottom:18px}
 .field label{display:block;font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:7px}
 .field label .req{color:var(--cherry)}
-.field input,.field select,.field textarea{width:100%;font-family:var(--f-body);font-size:15px;color:var(--text);padding:12px 14px;border:1px solid var(--line);border-radius:9px;background:var(--mist);transition:.15s}
+.field input,.field select,.field textarea{width:100%;font-family:var(--f-body);font-size:15px;color:var(--text);padding:12px 14px;border:1px solid var(--line);border-radius:9px;background:#fff;transition:.15s}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);background:#fff;box-shadow:0 0 0 3px rgba(12,44,74,.08)}
 .field textarea{min-height:110px;resize:vertical}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -319,6 +319,19 @@
 @media(max-width:560px){
   .cat-grid,.prod-grid,.two{grid-template-columns:1fr}
 }
+/* desktop nav: keep links tucked next to the logo */
+.nav-links a{white-space:nowrap}
+html,body{overflow-x:hidden}
+body{overflow-wrap:break-word}
+@media(max-width:900px){section{padding:64px 0}.page-hero{padding:46px 0 42px}}
+@media(max-width:600px){
+  .wrap{padding-left:20px;padding-right:20px}
+}
+@media(min-width:901px){
+  .nav{justify-content:flex-start}
+  .nav-links{margin-left:44px}
+  .nav-cta{margin-left:auto}
+}
 /* mobile header & clutter fixes */
 .nav-quote-m{display:none}
 @media(max-width:900px){
@@ -341,6 +354,7 @@
   <nav class="nav-links" id="navlinks">
     <a href="about.html">About Us</a>
     <a href="products.html">Products</a>
+    <a href="caps.html">Caps</a>
     <a href="quality.html">Quality</a>
     <a href="contact.html">Contact</a>
     <a href="quote.html" class="btn btn-cherry nav-quote-m">Request a Quote</a>
@@ -351,7 +365,7 @@
   </div>
   <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></header>
-<section class="page-hero"><div class="grid-dots"></div><div class="wrap"><div class="crumbs"><a href="index.html">Home</a> / Products</div><h1>Our Products</h1><p>Two product families, filed by the specs your production line runs on. Pick a family to browse the range.</p></div></section><section><div class="wrap"><div class="families"><a href="preforms.html" class="fam reveal"><div class="top"><div class="grid-dots"></div><svg viewBox="0 0 120 120" width="120"><g transform="translate(46,20)"><rect x="4" y="0" width="20" height="3" rx="1" fill="#CFE0F1"/><rect x="4" y="6" width="20" height="3" rx="1" fill="#CFE0F1"/><rect x="1" y="12" width="26" height="4" rx="2" fill="#9FC2E8"/><path d="M4 17h20l-3 62c-.4 4-4 6-7 6s-6.6-2-7-6L4 17z" fill="#7FB2E6"/></g></svg></div><div class="body"><span class="code">01 · Preforms</span><h3>PET Preforms</h3><p>70+ preforms across 16 neck sizes — water, soft-drink, oil, pharma, jar and specialty necks.</p><span class="go">Explore preforms <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a><a href="bottles.html" class="fam reveal"><div class="top"><div class="grid-dots"></div><svg viewBox="0 0 120 120" width="120"><g transform="translate(48,16)"><rect x="8" y="0" width="8" height="10" fill="#CFE0F1"/><path d="M6 10h12v6l4 8v56c0 4-3 7-7 7h-6c-4 0-7-3-7-7V24l4-8v-6z" fill="#7FB2E6"/></g></svg></div><div class="body"><span class="code">02 · Bottles</span><h3>PET Bottles</h3><p>Ready-to-fill bottles across capacities and shapes for water, edible oil, pharma, cosmetics and household use.</p><span class="go">Explore bottles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a></div></div></section>
+<section class="page-hero"><div class="grid-dots"></div><div class="wrap"><div class="crumbs"><a href="index.html">Home</a> / Products</div><h1>Our Products</h1><p>Two product families, filed by the specs your production line runs on. Pick a family to browse the range.</p></div></section><section><div class="wrap"><div class="families"><a href="preforms.html" class="fam reveal"><div class="top"><div class="grid-dots"></div><svg viewBox="0 0 120 120" width="120"><g transform="translate(46,20)"><rect x="4" y="0" width="20" height="3" rx="1" fill="#CFE0F1"/><rect x="4" y="6" width="20" height="3" rx="1" fill="#CFE0F1"/><rect x="1" y="12" width="26" height="4" rx="2" fill="#9FC2E8"/><path d="M4 17h20l-3 62c-.4 4-4 6-7 6s-6.6-2-7-6L4 17z" fill="#7FB2E6"/></g></svg></div><div class="body"><span class="code">01 · Preforms</span><h3>PET Preforms</h3><p>70+ preforms across 16 neck sizes — water, soft-drink, oil, pharma, jar and specialty necks.</p><span class="go">Explore preforms <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a><a href="bottles.html" class="fam reveal"><div class="top"><div class="grid-dots"></div><svg viewBox="0 0 120 120" width="120"><g transform="translate(48,16)"><rect x="8" y="0" width="8" height="10" fill="#CFE0F1"/><path d="M6 10h12v6l4 8v56c0 4-3 7-7 7h-6c-4 0-7-3-7-7V24l4-8v-6z" fill="#7FB2E6"/></g></svg></div><div class="body"><span class="code">02 · Bottles</span><h3>PET Bottles</h3><p>Ready-to-fill bottles across capacities and shapes for water, edible oil, pharma, cosmetics and household use.</p><span class="go">Explore bottles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a><a href="caps.html" class="fam reveal"><div class="top"><div class="grid-dots"></div><svg viewBox="0 0 120 120" width="120"><g transform="translate(38,44)"><rect x="0" y="0" width="44" height="32" rx="6" fill="#7FB2E6"/><rect x="0" y="0" width="44" height="11" rx="5" fill="#CFE0F1"/><g stroke="#0C2C4A" stroke-width="1.6" opacity=".22"><line x1="9" y1="14" x2="9" y2="29"/><line x1="17" y1="14" x2="17" y2="29"/><line x1="25" y1="14" x2="25" y2="29"/><line x1="33" y1="14" x2="33" y2="29"/></g></g></svg></div><div class="body"><span class="code">03 · Caps</span><h3>Caps &amp; Closures</h3><p>PET and PP caps and closures - including large jar sizes and a handled cap - to finish your packaging.</p><span class="go">Explore caps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></a></div></div></section>
 <footer id="contact-foot"><div class="wrap">
   <div class="foot-grid">
     <div>
@@ -362,6 +376,7 @@
     <div><h4>Products</h4><ul>
       <li><a href="preforms.html">PET Preforms</a></li>
       <li><a href="bottles.html">PET Bottles</a></li>
+      <li><a href="caps.html">Caps &amp; closures</a></li>
       <li><a href="preforms.html">By neck size</a></li>
       <li><a href="quote.html">Request a quote</a></li></ul></div>
     <div><h4>Company</h4><ul>
