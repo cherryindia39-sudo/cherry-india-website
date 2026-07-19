@@ -106,6 +106,10 @@
     background:radial-gradient(400px 220px at 30% 12%,rgba(127,178,230,.22),transparent 60%);}
   .hero-art .grid-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:22px 22px;opacity:.5}
   .hero-art .tag{position:absolute;bottom:16px;left:16px;font-family:var(--f-mono);font-size:11px;color:#9FC2E8;letter-spacing:.1em;z-index:3}
+  .hero-art .plate.plate-photo{background:#fff;padding:0}
+  .hero-art .plate.plate-photo::after{display:none}
+  .hero-art .plate.plate-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-art .plate.plate-photo .tag{color:#fff;background:rgba(12,44,74,.72);padding:5px 10px;border-radius:6px;backdrop-filter:blur(2px)}
 
   /* ---------- generic section ---------- */
   section{padding:82px 0}
@@ -126,6 +130,8 @@
   .fam{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;transition:transform .2s,box-shadow .25s;}
   .fam:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
   .fam .top{height:190px;background:linear-gradient(150deg,var(--ink) 0%,var(--ink-2) 100%);position:relative;display:flex;align-items:center;justify-content:center}
+  .fam .top.top-photo{background:#fff;border-bottom:1px solid var(--line);padding:14px}
+  .fam .top.top-photo img{max-width:100%;max-height:100%;object-fit:contain}
   .fam .top .grid-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:20px 20px;opacity:.5}
   .fam .body{padding:24px 26px 28px}
   .fam .code{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--cherry);text-transform:uppercase}
@@ -414,40 +420,9 @@ body{overflow-wrap:break-word}
       </div>
     </div>
     <div class="hero-art reveal">
-      <div class="plate">
-        <div class="grid-dots"></div>
-        <!-- three PET preforms -->
-        <svg viewBox="0 0 300 320" width="72%" xmlns="http://www.w3.org/2000/svg" aria-label="Illustration of PET preforms">
-          <g transform="translate(60,20)">
-            <!-- preform 1 (tall) -->
-            <g transform="translate(0,10)">
-              <rect x="6" y="0" width="28" height="4" rx="1" fill="#CFE0F1"/>
-              <rect x="6" y="7" width="28" height="4" rx="1" fill="#CFE0F1"/>
-              <rect x="6" y="14" width="28" height="4" rx="1" fill="#CFE0F1"/>
-              <rect x="2" y="21" width="36" height="5" rx="2" fill="#9FC2E8"/>
-              <path d="M6 27h28l-4 210c-.6 6-5.6 10-10 10s-9.4-4-10-10L6 27z" fill="#B3202A"/>
-              <path d="M10 40h20l-3 155c-.4 4-3.5 6.5-7 6.5s-6.6-2.5-7-6.5L10 40z" fill="#D6474F" opacity=".5"/>
-            </g>
-            <!-- preform 2 (short) -->
-            <g transform="translate(70,60)">
-              <rect x="6" y="0" width="28" height="4" rx="1" fill="#CFE0F1"/>
-              <rect x="6" y="7" width="28" height="4" rx="1" fill="#CFE0F1"/>
-              <rect x="2" y="14" width="36" height="5" rx="2" fill="#9FC2E8"/>
-              <path d="M6 20h28l-4 140c-.6 6-5.6 10-10 10s-9.4-4-10-10L6 20z" fill="#EAF1F9"/>
-              <path d="M10 33h20l-3 100c-.4 4-3.5 6.5-7 6.5s-6.6-2.5-7-6.5L10 33z" fill="#fff" opacity=".55"/>
-            </g>
-            <!-- preform 3 (tall) -->
-            <g transform="translate(140,10)">
-              <rect x="6" y="0" width="28" height="4" rx="1" fill="#CFE0F1"/>
-              <rect x="6" y="7" width="28" height="4" rx="1" fill="#CFE0F1"/>
-              <rect x="6" y="14" width="28" height="4" rx="1" fill="#CFE0F1"/>
-              <rect x="2" y="21" width="36" height="5" rx="2" fill="#9FC2E8"/>
-              <path d="M6 27h28l-4 190c-.6 6-5.6 10-10 10s-9.4-4-10-10L6 27z" fill="#7FB2E6"/>
-              <path d="M10 40h20l-3 140c-.4 4-3.5 6.5-7 6.5s-6.6-2.5-7-6.5L10 40z" fill="#CFE0F1" opacity=".5"/>
-            </g>
-          </g>
-        </svg>
-        <span class="tag">// PET PREFORM RANGE</span>
+      <div class="plate plate-photo">
+        <img src="images/hero_bottle.jpg" alt="Cherry India PET bottle - real product"/>
+        <span class="tag">// FROM OUR PRODUCT RANGE</span>
       </div>
     </div>
   </div>
@@ -473,15 +448,7 @@ body{overflow-wrap:break-word}
     </div>
     <div class="families">
       <a href="preforms.html" class="fam reveal">
-        <div class="top"><div class="grid-dots"></div>
-          <svg viewBox="0 0 120 120" width="120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g transform="translate(46,20)">
-              <rect x="4" y="0" width="20" height="3" rx="1" fill="#CFE0F1"/><rect x="4" y="6" width="20" height="3" rx="1" fill="#CFE0F1"/>
-              <rect x="1" y="12" width="26" height="4" rx="2" fill="#9FC2E8"/>
-              <path d="M4 17h20l-3 62c-.4 4-4 6-7 6s-6.6-2-7-6L4 17z" fill="#7FB2E6"/>
-            </g>
-          </svg>
-        </div>
+        <div class="top top-photo"><img src="images/jar_blue.jpg" alt="PET preform sample" loading="lazy"/></div>
         <div class="body">
           <span class="code">01 · Preforms</span>
           <h3>PET Preforms</h3>
@@ -490,14 +457,7 @@ body{overflow-wrap:break-word}
         </div>
       </a>
       <a href="bottles.html" class="fam reveal">
-        <div class="top"><div class="grid-dots"></div>
-          <svg viewBox="0 0 120 120" width="120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g transform="translate(48,16)">
-              <rect x="8" y="0" width="8" height="10" fill="#CFE0F1"/>
-              <path d="M6 10h12v6l4 8v56c0 4-3 7-7 7h-6c-4 0-7-3-7-7V24l4-8v-6z" fill="#7FB2E6"/>
-            </g>
-          </svg>
-        </div>
+        <div class="top top-photo"><img src="images/bottle_orange.jpg" alt="PET bottle sample" loading="lazy"/></div>
         <div class="body">
           <span class="code">02 · Bottles</span>
           <h3>PET Bottles</h3>
